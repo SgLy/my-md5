@@ -20,11 +20,8 @@ Countless.
 
 ### Usage
 ```bash
-> ./md5
-> 123456
-e10adc3949ba59abbe56e057f20f883e
-> Ctrl-D
->
+> ./md5 < md5.c
+44ee02083e0dc427af315e172d8e1b31
 ```
 
 ### Test

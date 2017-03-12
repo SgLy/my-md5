@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#define MAXN (2 << 10)
+#define MAXN (2 << 20)
 
 typedef unsigned long long b64;
 typedef unsigned int b32;
@@ -102,14 +102,17 @@ void init()
     }
 }
 
-int md5()
+int main()
 {
+    init();
     memset(s, 0, sizeof(s));
-    if (!fgets(s, MAXN, stdin))
-        return 0;
-    while (s[strlen(s) - 1] == 13 || s[strlen(s) - 1] == 10)
-        s[strlen(s) - 1] = 0;
-    b64 len = strlen(s);
+    b64 len = 0;
+    while (1) {
+        int c = getchar();
+        if (c == EOF)
+            break;
+        s[len++] = c;
+    }
     s[len++] = 0x80;
 
     memcpy(data, s, sizeof(s));
@@ -128,12 +131,5 @@ int md5()
     C = reverse32(C);
     D = reverse32(D);
     printf("%08x%08x%08x%08x\n", A, B, C, D);
-    return 1;
-}
-
-int main()
-{
-    init();
-    while (md5());
     return 0;
 }
