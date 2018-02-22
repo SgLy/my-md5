@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+#container {
+  height: 100vh;
+  width: 100vw;
+}
+.stations {
+  overflow-x: auto;
+  display: flex;
+}
+.station {
+  max-width: 4.2ex;
+  writing-mode: vertical-lr;
+  padding-right: 0.5ex;
+  text-orientation: mixed;
+}
+.substation {
+  font-size: 0.7em;
+  margin-left: -0.4em;
+/*   padding-top: 1em; */
+}
